@@ -13,6 +13,9 @@ export default class Counter extends React.Component {
     console.log("component did mount");
     console.log("-------------------");
   }
+  shouldComponentUpdate(nextProps, nextState) {
+    return true;
+  }
   render() {
     return <div>
       <button onClick={this.increment}>Increment</button>
@@ -25,5 +28,8 @@ export default class Counter extends React.Component {
   componentDidUpdate(prevProps, prevstate, snapshot) {
     console.log('component did update');
     console.log("-----------")
+  }
+  componentWillMount() {
+    console.log("component will mount");//this one when click unmount button , it render will mount function
   }
 }
