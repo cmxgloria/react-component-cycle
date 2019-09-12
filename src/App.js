@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Counter from './counter';
-import CSS from './app.css';
+import CSS from './App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,8 +9,8 @@ class App extends React.Component {
     this.state = {
       mount: true
     }
-    this.mount = () => this.setState({ mount: true })
-    this.unmount = () => this.setState({ mount: false })
+    this.mountCounter = () => this.setState({ mount: true });
+    this.unmountCounter = () => this.setState({ mount: false });
   }
   render() {
     return <div>
@@ -18,4 +18,4 @@ class App extends React.Component {
     </div>
   }
 }
-ReactDOM.render(<App />, getElementById('root'));
+ReactDOM.render(<Counter />, document.getElementById('root'));
