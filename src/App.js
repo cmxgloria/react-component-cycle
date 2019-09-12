@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Counter from './counter';
 import CSS from './App.css';
 
-class App extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -16,8 +15,7 @@ class App extends React.Component {
     return <div>
       <button onClick={this.mountCounter} disabled={this.state.mount}>Mount Counter</button>
       <button onClick={this.unmountCounter} disabled={!this.state.mount}>Unmount Counter</button>
-      <Counter />
+      {this.state.mount ? <Counter /> : null}
     </div>
   }
 }
-ReactDOM.render(<Counter />, document.getElementById('root'));
