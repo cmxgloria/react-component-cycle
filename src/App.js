@@ -14,8 +14,8 @@ class App extends React.Component {
   }
   render() {
     return <div>
-      <button onClick={this.mountCounter}>Mount Counter</button>
-      <button onClick={this.unmountCounter}>Unmount Counter</button>
+      <button onClick={this.mountCounter} disabled={this.state.mount}>Mount Counter</button>
+      <button onClick={this.unmountCounter} disabled={!this.state.mount}>Unmount Counter</button>
       <Counter />
     </div>
   }
