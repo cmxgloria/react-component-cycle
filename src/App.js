@@ -14,6 +14,8 @@ class App extends React.Component {
   }
   render() {
     return <div>
+      <button onClick={this.mountCounter}>Mount Counter</button>
+      <button onClick={this.unmountCounter}>Unmount Counter</button>
       <Counter />
     </div>
   }
