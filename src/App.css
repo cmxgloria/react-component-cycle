@@ -22,7 +22,45 @@
 .App-link {
   color: #61dafb;
 }
+.flex-container {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  align-content: stretch;
+  height: 100px;
+  
+}
+.mount {
+  background: #61dafb;
+}
+.unmount {
+  background-color: aquamarine;
+}
+.container {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  justify-content: center;
+  height: 100px;
+}
+.increment {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  padding: 10px;
+  margin: 4px;
 
+}
+.decrement {
+  display: flex;
+  justify-content: space-around;
+  background-color:lightpink;
+  padding: 10px;
+  margin: 4px;
+}
+.counter {
+  display: flex;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
