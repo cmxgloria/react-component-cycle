@@ -18,6 +18,10 @@ export default class Counter extends React.Component {
       }
     }
   }// static write before every other method
+  getSnapshotBeforeUpdate(prevProps, prevstate) {
+    console.log('get snapshot before update');
+    return null;
+  }//allow us to capture some properties that are not stored in the state before we render that component
   componentDidMount() {
     console.log("component did mount");
     console.log("-------------------");
@@ -39,7 +43,9 @@ export default class Counter extends React.Component {
       <div className="counter">
         Counter:{this.state.counter}
       </div>
+
     </div>
+
   }
   componentDidUpdate(prevProps, prevstate, snapshot) {
     console.log('component did update');
@@ -47,5 +53,8 @@ export default class Counter extends React.Component {
   }
   componentWillMount() {
     console.log("component will mount");//this one when click unmount button , it render will mount function
+  }
+  componentDidCatch(error, info) {
+    console.log('component did catch');
   }
 }
