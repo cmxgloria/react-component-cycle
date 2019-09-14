@@ -38,7 +38,7 @@ export default class Counter extends React.Component {
   }
   render() {
     console.log('render');
-    if (this.state.error) {
+    if (this.props.showErrorComponent && this.state.error) {
       return <div>We have the counter error.{this.state.error.message}</div>
     }
     return <div className="container">
