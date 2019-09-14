@@ -37,6 +37,10 @@ export default class Counter extends React.Component {
 
   }
   render() {
+    console.log('render');
+    if (this.state.error) {
+      return <div>We have the counter error.{this.state.error.message}</div>
+    }
     return <div className="container">
       <button className="increment" onClick={this.increment}>Increment</button>
       <button className="decrement" onClick={this.decrement}>Decrement</button>
