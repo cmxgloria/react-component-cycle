@@ -5,7 +5,8 @@ export default class Counter extends React.Component {
     super(props)
     this.state = {
       counter: 0,
-      seed: 0
+      seed: 0,
+      intializing: true
     }
     this.increment = () => this.setState({ counter: this.state.counter + 1 });
     this.decrement = () => this.setState({ counter: this.state.counter - 1 });
@@ -24,7 +25,7 @@ export default class Counter extends React.Component {
   }//allow us to capture some properties that are not stored in the state before we render that component
   componentDidMount() {
     console.log("component did mount");
-    console.log("-------------------");
+    setTimeout(() => { this.setState({ intializing: false }) }, 1000);
   }
   shouldComponentUpdate(nextProps, nextState) {
     console.log("should component update")
@@ -38,6 +39,9 @@ export default class Counter extends React.Component {
   }
   render() {
     console.log('render');
+    if (this.state.intializing) {
+      return <div>Intializing...</div>;
+    }
     if (this.props.showErrorComponent && this.state.error) {
       return <div>We have the counter error.{this.state.error.message}</div>
     }
