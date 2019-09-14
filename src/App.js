@@ -8,12 +8,14 @@ export default class App extends React.Component {
     this.state = {
       mount: true,
       ignoreProp: 0,
-      seed: 40
+      seed: 40,
+      showErrorComponent: false
     }
     this.mountCounter = () => this.setState({ mount: true });
     this.unmountCounter = () => this.setState({ mount: false });
     this.ignoreProp = () => this.setState({ ignoreProp: Math.random });
     this.seedGenerator = () => this.setState({ seed: Number.parseInt(Math.random() * 100) });
+    this.toggleComponent = () => this.setState({ showErrorComponent: !this.state.showErrorComponent });
   }
   render() {
     return <div className="flex-container">
@@ -21,6 +23,7 @@ export default class App extends React.Component {
       <button className="unmount" onClick={this.unmountCounter} disabled={!this.state.mount}>Unmount Counter</button>
       <button onClick={this.ignoreProp}>Ignore Prop</button>
       <button onClick={this.seedGenerator}>Seed Generator</button>
+      <button onClick={this.toggleComponent}>Toggle Component</button>
       {this.state.mount ?
         <Counter
           ignoreProp={this.state.ignoreProp}
